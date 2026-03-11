@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>吴梓锡 - 招聘专员 | 个人简历</title>
-    <!-- 引入图标库增强视觉效果 -->
+    <!-- 引入图标库 -->
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* 全局重置与基础样式 */
@@ -16,7 +16,7 @@
         }
         
         :root {
-            --primary: #2563eb; /* 主色调-专业蓝 */
+            --primary: #f97316; /* HR专属暖橙色主色调 */
             --secondary: #f8fafc; /* 背景浅灰 */
             --text-dark: #1e293b; /* 文字深灰 */
             --text-light: #64748b; /* 文字浅灰 */
@@ -41,9 +41,9 @@
             overflow: hidden;
         }
         
-        /* 头部信息区（蓝色背景） */
+        /* 头部信息区（橙色渐变背景） */
         .resume-header {
-            background: linear-gradient(135deg, var(--primary), #3b82f6);
+            background: linear-gradient(135deg, var(--primary), #fb923c);
             color: white;
             padding: 3rem 2.5rem;
             text-align: center;
@@ -80,6 +80,25 @@
         .contact-item i {
             font-size: 1rem;
             opacity: 0.9;
+        }
+        
+        /* 下载PDF按钮样式 */
+        .download-btn {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.8rem 1.5rem;
+            background: white;
+            color: var(--primary);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+        .download-btn:hover {
+            background: rgba(255,255,255,0.2);
+            color: white;
         }
         
         /* 简历内容区 */
@@ -140,7 +159,7 @@
             font-size: 0.85rem;
         }
         
-        /* 列表样式优化 */
+        /* 自定义列表样式 */
         .custom-list {
             list-style: none;
             padding-left: 1rem;
@@ -157,6 +176,28 @@
             font-weight: bold;
             position: absolute;
             left: -1rem;
+        }
+        
+        /* 技能评分模块样式 */
+        .skill-item {
+            margin: 1rem 0;
+        }
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.3rem;
+            font-size: 0.95rem;
+        }
+        .skill-bar {
+            height: 8px;
+            background: #f1f5f9;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .skill-progress {
+            height: 100%;
+            background: var(--primary);
+            border-radius: 4px;
         }
         
         /* 响应式适配（手机端） */
@@ -192,7 +233,7 @@
 </head>
 <body>
     <div class="resume-container">
-        <!-- 头部信息区 -->
+        <!-- 头部信息区（含下载按钮） -->
         <div class="resume-header">
             <h1 class="name">吴梓锡</h1>
             <p class="job-title">招聘专员</p>
@@ -210,6 +251,10 @@
                     <span>17512018781</span>
                 </div>
             </div>
+            <!-- PDF下载按钮 -->
+            <a href="吴梓锡1.pdf" class="download-btn" download>
+                <i class="fas fa-download"></i> 下载PDF简历
+            </a>
         </div>
 
         <!-- 内容区 -->
@@ -226,6 +271,50 @@
                     <li>熟悉国家及地区劳动法律法规，办公软件熟练，擅长数据分析，能够熟练掌握数据透视表、函数和公式等；</li>
                     <li>具备较强的工作、组织、管理、沟通表达、学习运用能力。为人正直、稳重、讲诚信，有亲和力，能够处理好各种人事关系，工作热情、责任心强。</li>
                 </ul>
+            </div>
+
+            <!-- 技能评分模块 -->
+            <h2 class="section-title">
+                <i class="fas fa-chart-bar"></i>
+                技能评分
+            </h2>
+            <div class="section-content">
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>招聘流程管理</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>培训体系搭建</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>办公软件（Excel/PPT）</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>劳动法规掌握</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%;"></div>
+                    </div>
+                </div>
             </div>
 
             <!-- 工作经历模块 -->
