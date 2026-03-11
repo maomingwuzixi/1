@@ -110,6 +110,11 @@
             color: var(--text-light);
             line-height: 1.6;
         }
+        ul.standard-list {
+            padding-left: 1.2rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
         @media (max-width: 768px) {
             .resume-container {
                 padding: 1.5rem;
@@ -121,96 +126,96 @@
     </style>
 </head>
 <body>
-    <!-- 返回主域名按钮 -->
-    <div style="text-align: center; margin: 1rem 0;">
-        <a href="https://1297035851.top" style="
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 1.2rem;
-            background: #f97316;
-            color: white;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        " onmouseover="this.style.background='#ea580c'" onmouseout="this.style.background='#f97316'">
-            <i class="fas fa-home"></i> 返回个人主页
-        </a>
+
+<!-- 返回主域名按钮 -->
+<div style="text-align: center; margin: 1rem 0;">
+    <a href="https://1297035851.top" style="
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1.2rem;
+        background: #f97316;
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    ">
+        <i class="fas fa-home"></i> 返回个人主页
+    </a>
+</div>
+
+<div class="resume-container">
+    <div class="header">
+        <h1>吴梓锡</h1>
+        <p>招聘专员</p>
     </div>
 
-    <div class="resume-container">
-        <div class="header">
-            <h1>吴梓锡</h1>
-            <p>人力资源管理 | 招聘 | 培训 | 员工关系</p>
+    <div class="section">
+        <h2 class="section-title"><i class="fas fa-user"></i> 通讯信息</h2>
+        <div class="info-item">
+            <div class="info-label">籍贯：</div>
+            <div class="info-content">广东 茂名</div>
         </div>
-
-        <div class="section">
-            <h2 class="section-title"><i class="fas fa-user"></i> 基本信息</h2>
-            <div class="info-item">
-                <div class="info-label">电话：</div>
-                <div class="info-content">138****1234</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label">邮箱：</div>
-                <div class="info-content">wuzixi@example.com</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label">求职意向：</div>
-                <div class="info-content">人力资源专员/招聘专员</div>
-            </div>
+        <div class="info-item">
+            <div class="info-label">住址：</div>
+            <div class="info-content">珠海市红旗镇小林村</div>
         </div>
-
-        <div class="section">
-            <h2 class="section-title"><i class="fas fa-briefcase"></i> 工作经历</h2>
-            <div class="project-item">
-                <h4>人力资源专员 | 某企业 | 2022.03 - 至今</h4>
-                <p>1. 负责公司全岗位招聘，年度完成正式工入职1590+人，临时工入职389人，到岗率提升20%；<br>
-                2. 搭建新员工培训体系，组织培训181场，覆盖1562人次，新员工留存率提升18%；<br>
-                3. 处理员工关系，完善劳动合同签订、社保缴纳等流程，降低劳动纠纷率至0。</p>
-            </div>
+        <div class="info-item">
+            <div class="info-label">邮箱：</div>
+            <div class="info-content">1297035851@qq.com</div>
         </div>
-
-        <div class="section">
-            <h2 class="section-title"><i class="fas fa-star"></i> 专业技能</h2>
-            <div class="skill-item">
-                <div class="skill-name">招聘渠道管理</div>
-                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
-                <div class="skill-score">90分</div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-name">面试沟通</div>
-                <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
-                <div class="skill-score">85分</div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-name">培训体系搭建</div>
-                <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
-                <div class="skill-score">80分</div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-name">劳动法规应用</div>
-                <div class="skill-bar"><div class="skill-progress" style="width: 88%;"></div></div>
-                <div class="skill-score">88分</div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-name">Excel数据处理</div>
-                <div class="skill-bar"><div class="skill-progress" style="width: 92%;"></div></div>
-                <div class="skill-score">92分</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title"><i class="fas fa-trophy"></i> 项目成果</h2>
-            <div class="project-item">
-                <h4>招聘渠道优化项目</h4>
-                <p>梳理12个招聘渠道，淘汰4个低效渠道，聚焦内推、垂直平台等高效渠道，招聘成本降低15%，平均到岗周期从15天缩短至12天。</p>
-            </div>
-            <div class="project-item">
-                <h4>新员工培训标准化项目</h4>
-                <p>设计8门标准化培训课程，制定考核体系，新员工30天转正率从72%提升至90%。</p>
-            </div>
+        <div class="info-item">
+            <div class="info-label">电话：</div>
+            <div class="info-content">17512018781</div>
         </div>
     </div>
+
+    <div class="section">
+        <h2 class="section-title"><i class="fas fa-star"></i> 个人优势</h2>
+        <p style="line-height:1.8; color:var(--text-light);">
+本人思维逻辑清晰，具有独立处理突发事件及组织协调能力，强烈的敬业和团队合作精神，良好的职业道德。<br>
+1.熟悉人力资源六大模块，有组织规划、招聘配置、培训开发、薪酬福利、员工关系实操经验；<br>
+2.熟悉国家及地区劳动法律法规，办公软件熟练，擅长数据分析，能够熟练掌握数据透视表、函数和公式等；<br>
+3.具备较强的工作、组织、管理、沟通表达、学习运用能力。为人正直、稳重、讲诚信，有亲和力，能够处理好各种人事关系，工作热情、责任心强。
+        </p>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title"><i class="fas fa-briefcase"></i> 工作经历</h2>
+        <div class="project-item">
+            <h4>深圳市富程威科技股份有限公司 | 招聘专员 | 2022.2 - 至今</h4>
+            <ul class="standard-list">
+                <li>根据现有编制及生产部门实际用人需求，制定招聘目标；</li>
+                <li>对应聘进行初试，合格者安排资料填写；</li>
+                <li>组织相关部门进行复试工作；</li>
+                <li>员工入职资料的通知及入职手续的跟进；</li>
+                <li>拓展、优化线上线下布点广告招聘渠道，根据不同阶段不同岗位招聘需求应用有效渠道；</li>
+                <li>根据培训需求调查，编制公司年度的培训计划，制定培训预算；</li>
+                <li>对新员工进行入职培训的讲授、考核及维护入职培训教材及试卷；</li>
+                <li>发布月份培训安排，跟进执行部门课程的实施；</li>
+                <li>依据月度培训计划组织培训的实施工作，负责讲师资源的协调、培训预算支出的控制、对培训活动组织和质量进行全程管理，并做好会场布置、参训人员组织、出勤管理等相关工作；</li>
+                <li>组织开展外部培训，负责联络外部培训机构、控制培训费用、筛选参训人员等工作及培训结束后的反馈交流，建立外部培训档案。</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title"><i class="fas fa-graduation-cap"></i> 教育经历</h2>
+        <div class="info-item">
+            <div class="info-label">时间：</div>
+            <div class="info-content">2023 - 2025</div>
+        </div>
+        <div class="info-item">
+            <div class="info-label">学校：</div>
+            <div class="info-content">广州城建职业学院</div>
+        </div>
+        <div class="info-item">
+            <div class="info-label">专业：</div>
+            <div class="info-content">工商管理</div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
