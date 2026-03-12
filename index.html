@@ -1,410 +1,133 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>吴梓锡 - 招聘专员 | 个人简历</title>
-    <!-- 引入图标库 -->
-    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* 全局重置与基础样式 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Inter", "Microsoft YaHei", sans-serif;
-        }
-        
-        :root {
-            --primary: #f97316; /* HR专属暖橙色主色调 */
-            --secondary: #f8fafc; /* 背景浅灰 */
-            --text-dark: #1e293b; /* 文字深灰 */
-            --text-light: #64748b; /* 文字浅灰 */
-            --border: #e2e8f0; /* 边框色 */
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        
-        body {
-            background-color: var(--secondary);
-            color: var(--text-dark);
-            line-height: 1.7;
-            padding: 2rem 1rem;
-        }
-        
-        /* 简历主体容器 */
-        .resume-container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            overflow: hidden;
-        }
-        
-        /* 头部信息区（橙色渐变背景） */
-        .resume-header {
-            background: linear-gradient(135deg, var(--primary), #fb923c);
-            color: white;
-            padding: 3rem 2.5rem;
-            text-align: center;
-        }
-        
-        .name {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.5px;
-        }
-        
-        .job-title {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 1.5rem;
-            font-weight: 400;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-            font-size: 0.95rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .contact-item i {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-        
-        /* 下载PDF按钮样式 */
-        .download-btn {
-            display: inline-block;
-            margin-top: 1.5rem;
-            padding: 0.8rem 1.5rem;
-            background: white;
-            color: var(--primary);
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            border: 2px solid white;
-        }
-        .download-btn:hover {
-            background: rgba(255,255,255,0.2);
-            color: white;
-        }
-        
-        /* 简历内容区 */
-        .resume-body {
-            padding: 2.5rem;
-        }
-        
-        /* 模块标题样式 */
-        .section-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin: 2rem 0 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--border);
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-        
-        .section-title i {
-            font-size: 1.2rem;
-        }
-        
-        /* 第一个模块标题去掉上边距 */
-        .section-title:first-of-type {
-            margin-top: 0;
-        }
-        
-        /* 内容模块样式 */
-        .section-content {
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-            color: var(--text-dark);
-        }
-        
-        /* 工作/教育经历项 */
-        .experience-item {
-            margin: 1.2rem 0;
-            padding-left: 1rem;
-            border-left: 3px solid var(--primary);
-        }
-        
-        .experience-header {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-        }
-        
-        .experience-company {
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-        
-        .experience-date {
-            color: var(--text-light);
-            font-size: 0.85rem;
-        }
-        
-        /* 自定义列表样式 */
-        .custom-list {
-            list-style: none;
-            padding-left: 1rem;
-        }
-        
-        .custom-list li {
-            margin: 0.8rem 0;
-            position: relative;
-        }
-        
-        .custom-list li::before {
-            content: "✓";
-            color: var(--primary);
-            font-weight: bold;
-            position: absolute;
-            left: -1rem;
-        }
-        
-        /* 技能评分模块样式 */
-        .skill-item {
-            margin: 1rem 0;
-        }
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.3rem;
-            font-size: 0.95rem;
-        }
-        .skill-bar {
-            height: 8px;
-            background: #f1f5f9;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        .skill-progress {
-            height: 100%;
-            background: var(--primary);
-            border-radius: 4px;
-        }
-        
-        /* 核心成果数字高亮 */
-        .highlight-num {
-            color: var(--primary);
-            font-weight: 700;
-        }
-        
-        /* 响应式适配（手机端） */
-        @media (max-width: 768px) {
-            .resume-header {
-                padding: 2rem 1.5rem;
-            }
-            
-            .name {
-                font-size: 1.8rem;
-            }
-            
-            .contact-info {
-                gap: 1rem;
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .resume-body {
-                padding: 1.5rem;
-            }
-            
-            .section-title {
-                font-size: 1.2rem;
-            }
-            
-            .experience-header {
-                flex-direction: column;
-                gap: 0.3rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>吴梓锡 - 制造业HR个人主页</title>
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+/* 全局样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+/* 颜色变量（统一风格） */
+:root {
+    --primary: #f97316; /* 主色调：橙色 */
+    --bg: #f8fafc;       /* 背景色：浅灰 */
+    --card: #ffffff;     /* 卡片底色：白色 */
+    --text: #333333;     /* 正文色：深灰 */
+    --light-text: #64748b; /* 浅文本色：灰蓝 */
+}
+/* 页面基础样式 */
+body {
+    background-color: var(--bg);
+    padding: 3rem 1rem; /* 上下3rem，左右1rem内边距 */
+}
+/* 容器（居中+限制宽度） */
+.container {
+    max-width: 1000px; /* 最大宽度，适配电脑 */
+    margin: 0 auto;    /* 水平居中 */
+    text-align: center; /* 内容居中 */
+}
+/* 头部标题样式 */
+.header {
+    margin-bottom: 4rem; /* 和下面板块拉开距离 */
+}
+.header h1 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+.header p {
+    font-size: 1.2rem;
+    color: var(--light-text);
+}
+/* 三大板块入口卡片容器 */
+.section-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 一行3个卡片 */
+    gap: 2rem; /* 卡片之间的间距 */
+    margin-top: 3rem;
+}
+/* 单个卡片样式 */
+.section-card {
+    background-color: var(--card);
+    padding: 3rem 2rem; /* 内边距，让卡片饱满 */
+    border-radius: 12px; /* 圆角 */
+    text-decoration: none; /* 去掉链接下划线 */
+    color: var(--text); /* 文字色 */
+    transition: all 0.3s ease; /* hover动画过渡 */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* 轻微阴影 */
+}
+/* 卡片hover效果（鼠标放上去） */
+.section-card:hover {
+    transform: translateY(-8px); /* 向上移8px */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* 阴影变大 */
+    background-color: #fef3c7; /* 背景变浅橙 */
+    border: 1px solid var(--primary); /* 加边框 */
+}
+/* 卡片里的图标 */
+.section-card i {
+    font-size: 3rem; /* 图标大小 */
+    color: var(--primary); /* 图标颜色 */
+    margin-bottom: 1.5rem; /* 和标题拉开距离 */
+}
+/* 卡片标题 */
+.section-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #1e293b;
+}
+/* 卡片描述文字 */
+.section-card p {
+    color: var(--light-text);
+    line-height: 1.6; /* 行高，更易读 */
+}
+/* 响应式：手机端适配（屏幕小于768px时） */
+@media (max-width: 768px) {
+    .section-links {
+        grid-template-columns: 1fr; /* 一行只显示1个卡片 */
+    }
+    .section-card {
+        padding: 2rem 1.5rem; /* 减小内边距 */
+    }
+}
+</style>
 </head>
 <body>
-    <!-- 返回主域名按钮 -->
-    <div style="text-align: center; margin: 1rem 0;">
-        <a href="https://1297035851.top" style="
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 1.2rem;
-            background: #f97316;
-            color: white;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-        " onmouseover="this.style.background='#ea580c'" onmouseout="this.style.background='#f97316'">
-            <i class="fas fa-home"></i> 返回个人主页
+<div class="container">
+    <!-- 头部标题 -->
+    <div class="header">
+        <h1><i class="fas fa-user-tie"></i> 吴梓锡 - 制造业HR实战</h1>
+        <p>4年制造业HR经验 | 招聘/培训/员工关系/合规管理 实操沉淀</p>
+    </div>
+
+    <!-- 三大板块入口（核心） -->
+    <div class="section-links">
+        <!-- 1. 博客板块入口 → 指向 blog 文件夹的首页 -->
+        <a href="blog/index.html" class="section-card">
+            <i class="fas fa-pen-fancy"></i>
+            <h2>HR职场博客</h2>
+            <p>招聘技巧/培训体系/劳动法规<br>4年实战经验总结</p>
+        </a>
+
+        <!-- 2. 工作成果板块入口 → 指向 work 文件夹的首页 -->
+        <a href="work/index.html" class="section-card">
+            <i class="fas fa-chart-line"></i>
+            <h2>工作成果展示</h2>
+            <p>招聘优化/培训搭建/员工关系<br>量化成果+落地方法</p>
+        </a>
+
+        <!-- 3. 学习笔记板块入口 → 指向 note 文件夹的首页 -->
+        <a href="note/index.html" class="section-card">
+            <i class="fas fa-book-open"></i>
+            <h2>HR学习笔记</h2>
+            <p>工具模板/函数技巧/合规要点<br>可直接套用的实操笔记</p>
         </a>
     </div>
-
-    <!-- 简历主体内容（扩写优化版） -->
-    <div class="resume-container">
-        <!-- 头部信息区（含下载按钮） -->
-        <div class="resume-header">
-            <h1 class="name">吴梓锡</h1>
-            <p class="job-title">招聘专员 | 人力资源管理</p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>广东 茂名 | 珠海红旗镇小林村</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>1297035851@qq.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>17512018781</span>
-                </div>
-            </div>
-            <a href="吴梓锡1.pdf" class="download-btn" download>
-                <i class="fas fa-download"></i> 下载PDF简历
-            </a>
-        </div>
-
-        <!-- 内容区 -->
-        <div class="resume-body">
-            <!-- 个人优势模块（扩写） -->
-            <h2 class="section-title">
-                <i class="fas fa-star"></i>
-                核心竞争力
-            </h2>
-            <div class="section-content">
-                具备<span class="highlight-num">4年+</span>制造行业招聘与人力资源全模块实操经验，擅长大规模人员招聘、新员工培训体系搭建及员工关系全流程管理，熟悉珠三角地区劳动法规及制造业人力资源管理特点，能够快速响应企业规模化用人需求，兼顾招聘效率与人员留存。
-                <ul class="custom-list">
-                    <li>招聘管理：精通线上线下多渠道招聘策略，可独立完成从需求分析→渠道拓展→面试组织→入职跟进的全流程，适配制造业大规模、高周转的用人场景；</li>
-                    <li>培训体系：可独立搭建标准化新员工培训体系，涵盖教材开发、考核设计、效果追踪，落地性强；</li>
-                    <li>合规管理：熟练掌握劳动合同签订、社保缴纳、离职补偿等劳动法规实操要点，从业期间未发生劳动纠纷；</li>
-                    <li>数据能力：精通Excel数据透视表、VLOOKUP/SUMIFS等函数，可通过数据分析优化招聘渠道、降低用工成本。</li>
-                </ul>
-            </div>
-
-            <!-- 技能评分模块（优化） -->
-            <h2 class="section-title">
-                <i class="fas fa-chart-bar"></i>
-                专业技能矩阵
-            </h2>
-            <div class="section-content">
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>制造业大规模招聘</span>
-                        <span>95%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 95%;"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>新员工培训体系搭建</span>
-                        <span>85%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 85%;"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Excel数据分析（HR场景）</span>
-                        <span>90%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 90%;"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>劳动法规落地应用</span>
-                        <span>80%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 80%;"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>员工关系全流程管理</span>
-                        <span>88%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 88%;"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 工作经历模块（场景化扩写） -->
-            <h2 class="section-title">
-                <i class="fas fa-briefcase"></i>
-                工作经历
-            </h2>
-            <div class="section-content">
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <span class="experience-company">深圳市富程威科技股份有限公司 | 招聘专员（核心人力资源岗）</span>
-                        <span class="experience-date">2022.2 - 至今</span>
-                    </div>
-                    <ul class="custom-list">
-                        <li><strong>招聘全流程管理</strong>：对接生产/技术/行政等10+部门的用人需求，月均处理招聘需求50+个，制定分层招聘策略（核心岗位精准筛选、普工岗位高效批量招聘），年度完成正式工入职1590+人、临时工389人，到岗及时率95%以上；</li>
-                        <li><strong>面试与筛选优化</strong>：建立标准化初试题库，针对不同岗位设计差异化面试问题，有效降低试用期离职率12%；统筹复试安排，协调用人部门面试时间，缩短招聘周期3天/岗；</li>
-                        <li><strong>招聘渠道优化</strong>：梳理线上（BOSS直聘、58同城）+线下（厂区直招、劳务合作）12个招聘渠道，淘汰4个低效渠道，聚焦内推、本地劳务合作等高效渠道，单人均招聘成本降低15%；</li>
-                        <li><strong>培训体系搭建</strong>：基于制造业新员工特点，编制包含安全规范、岗位技能、企业文化的8门标准化培训课程，制定考核试卷及评分标准；月度组织新员工培训15+场，覆盖130+人次，完成上岗证办理92+人次/月；</li>
-                        <li><strong>培训运营管理</strong>：编制年度培训计划及预算，统筹内外部讲师资源，把控培训质量；跟进部门定制化培训需求，全年组织各类培训181场，员工培训满意度85%+；</li>
-                        <li><strong>员工全周期服务</strong>：统筹员工入职、转正、调动、离职全流程手续，跟进职业健康体检338人次，处理员工咨询200+次，维护和谐的员工关系，劳动纠纷发生率为0。</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- 核心工作成果模块（量化升级） -->
-            <h2 class="section-title">
-                <i class="fas fa-trophy"></i>
-                核心工作成果
-            </h2>
-            <div class="section-content">
-                <ul class="custom-list">
-                    <li><strong>招聘效率提升</strong>：优化招聘流程后，普工岗位平均到岗周期从7天缩短至4天，核心技术岗位从15天缩短至10天，满足公司订单高峰期的紧急用人需求；</li>
-                    <li><strong>培训标准化落地</strong>：搭建的新员工培训体系覆盖100%新入职人员，30天留存率从75%提升至88%，转正率从80%提升至92%；</li>
-                    <li><strong>成本控制</strong>：通过渠道优化+内推激励政策，年度招聘费用节省8.2万元，内推入职占比从10%提升至25%；</li>
-                    <li><strong>应急处理能力</strong>：在厂区搬迁、订单突增等场景下，快速调整招聘策略，联动劳务公司补充临时工389人，保障生产无间断，获公司「年度优秀员工」提名。</li>
-                </ul>
-            </div>
-
-            <!-- 教育经历模块（补充） -->
-            <h2 class="section-title">
-                <i class="fas fa-graduation-cap"></i>
-                教育背景
-            </h2>
-            <div class="section-content">
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <span class="experience-company">广州城建职业学院 | 工商管理（人力资源方向）</span>
-                        <span class="experience-date">2023 - 2025</span>
-                    </div>
-                    <p style="margin-top:0.5rem;">主修课程：人力资源管理、劳动经济学、劳动合同法、薪酬管理，成绩排名前10%，夯实HR理论基础。</p>
-                </div>
-                <div class="experience-item" style="margin-top:1rem;">
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
 </body>
 </html>
